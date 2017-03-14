@@ -1,4 +1,3 @@
-
 #include <iostream>
 
 #include <cstdlib>
@@ -6,24 +5,6 @@
 
 
 using namespace std;
-
-bool prime_checker(int num)
-{
-    int n = num;
-    int i;
-  bool isPrime = true;
-
-
-  for(i = 2; i <= n / 2; ++i)
-  {
-      if(n % i == 0)
-      {
-          isPrime = false;
-          break;
-      }
-  }
-  return isPrime;
-}
 
 int main()
 {
@@ -69,7 +50,7 @@ int main()
 
          cout<<endl;
 
-
+         
 
          int ** Array = new int * [rows];
 
@@ -85,11 +66,65 @@ int main()
           {
             Array[iter][jiter] = 10 + rand() % (89 + 1);
 
-            if (prime_checker(Array[iter][jiter]))
-                cout<<Array[iter][jiter] <<", ";
+            cout<<Array[iter][jiter] <<", ";
           }
           cout<<endl;
          }
 
-return 0;
+
+
+
+
+
+
+
+
+// 	       
+
+//            // for (int j = 0; j<=10; j++ )
+//            // {
+//            //     cout<< <<" ";
+//            // }
+
+//         for (int iter = 0; iter < columns; iter++)
+//         {
+//           int odd_counter = 0;
+
+//           cout<<"Page " << iter+1 <<": "<<endl;
+//             for (int jiter = 0; jiter < columns ; jiter++)
+//             {
+
+//               for (int piter = 0; piter < rows; piter++)
+//               {
+//                   Array[piter][jiter][iter] = 10 + rand() % (99-10+1);
+
+//                   cout<<Array[piter][jiter][iter] << " ";
+
+//                   if (Array[piter][jiter][iter] % 2 != 0)
+//                   {
+//                     odd_counter++;
+//                   }
+//               }
+
+//               cout<<endl;
+
+//             }
+
+// cout<<"Odd Counter: " << odd_counter<<endl<<endl;
+//            // cout<<endl;
+//         }
+
+
+// //           srand(time(0));
+
+//            for (int j = 0; j<=10; j++ )
+//            {
+//                cout<< 0 + rand() % (10 + 1) <<" ";
+//            }
+
+
+
+
+	return 0;
 }
+

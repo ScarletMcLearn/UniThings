@@ -21,7 +21,7 @@
 // for(int i = 0; i < ROW; i++) {
 //    delete[] pvalue[i];
 // }
-// delete [] pvalue; 
+// delete [] pvalue;
 
 
 
@@ -31,12 +31,12 @@ using namespace std;
 
 class Box {
    public:
-      Box() { 
-         cout << "Constructor called!" <<endl; 
+      Box() {
+         cout << "Constructor called!" <<endl;
       }
-		
-      ~Box() { 
-         cout << "Destructor called!" <<endl; 
+
+      ~Box() {
+         cout << "Destructor called!" <<endl;
       }
 };
 

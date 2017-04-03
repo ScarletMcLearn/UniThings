@@ -12,7 +12,7 @@ public:
 	Node * pRightChild;
 
 
-	Node() : iData(), dData(0.0), pLeftChild(NULL), pRightChild(NULL)
+	Node() : iData(0), dData(0.0), pLeftChild(NULL), pRightChild(NULL)
 	{
 
 	}

@@ -37,23 +37,77 @@ public:
             else recInsert(root->right,newNode);
         }
     }*/
-    TreeNode* recInsert(TreeNode *root, TreeNode *newNode)
+//    TreeNode* recInsert(TreeNode *root, TreeNode *newNode)
+//    {
+//        if(root==NULL)
+//        {
+//            return newNode;
+//        }
+//        else if(newNode->data<root->data)
+//        {
+//            root->left=recInsert(root->left,newNode);
+//        }
+//        else
+//        {
+//            root->right=recInsert(root->right,newNode);
+//        }
+//
+//        return root;
+//    }
+
+
+//     TreeNode* recInsert(TreeNode *root, TreeNode *newNode)
+//    {
+//        TreeNode * corner_node;
+//
+//        if(root==NULL)
+//        {
+//            return newNode;
+//        }
+//        else if(newNode->data<root->data)
+//        {
+//            corner_node =recInsert(root->left,newNode);
+//
+//            root -> left = corner_node;
+//        }
+//        else
+//        {
+//            corner_node =recInsert(root->right,newNode);
+//
+//            root -> right = corner_node;
+//        }
+//
+//        return root;
+//    }
+
+
+
+TreeNode* recInsert(TreeNode *root, TreeNode *newNode)
     {
+        TreeNode * corner_node;
+
         if(root==NULL)
         {
             return newNode;
         }
         else if(newNode->data<root->data)
         {
-            root->left=recInsert(root->left,newNode);
+            corner_node =recInsert(root->left,newNode);
+
+            root -> left = corner_node;
         }
         else
         {
-            root->right=recInsert(root->right,newNode);
+            corner_node =recInsert(root->right,newNode);
+
+            root -> right = corner_node;
         }
 
         return root;
     }
+
+
+
     float findMinBST(TreeNode *root)
     {
         if(root->left==NULL)

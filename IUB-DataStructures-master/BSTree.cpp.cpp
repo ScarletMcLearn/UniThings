@@ -228,6 +228,7 @@ TreeNode* recInsert(TreeNode *root, TreeNode *newNode)
         //recInsert(r,newNode);
         r=recInsert(r,newNode);
     }
+    
     void preorder(TreeNode *root)
     {
         if(root==NULL) return;

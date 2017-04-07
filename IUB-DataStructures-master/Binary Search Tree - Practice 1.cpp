@@ -174,7 +174,7 @@ public:
     }
 
 
-    TreeMpde * find_max(TreeNode * current);
+    TreeNode * find_max(TreeNode * current);
     {
     	if (current -> right_child == NULL)
     	{
@@ -184,6 +184,12 @@ public:
     	{
     		find_max(current -> right_child)
     	}
+    }
+
+
+    TreeNode * find_second_max(TreeNode * current)
+    {
+    	TreeNode * parent
     }
 
 

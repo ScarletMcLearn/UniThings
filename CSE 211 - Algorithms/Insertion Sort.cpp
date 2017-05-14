@@ -45,6 +45,21 @@ int main()
 // end for
 
 
+// for (int iter = 1; iter < n - 1; iter++)
+// {
+//     int jiter = iter - 1;
+//     int temp = arr[iter];
+//
+//     while (jiter >= 0 && arr[jiter] > temp)
+//     {
+//         arr[jiter+1] = arr[jiter];
+//         jiter--;
+//     }
+//
+//     arr[jiter+1] = temp;
+// }
+
+
 void insertion_sort(int arr[], int sz)
 {
     int i, j, v;

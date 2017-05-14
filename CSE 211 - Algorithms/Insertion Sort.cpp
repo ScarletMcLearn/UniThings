@@ -31,6 +31,20 @@ int main()
 }
 
 
+
+// S : sequence of sortable items
+// N : no of items
+// for i = 1 to N-1 do
+//     j = i-1;
+//     temp = S[i];
+//     while j>=0 and S[j] > temp
+//         S[j+1] = S[j];
+//         j = j-1;
+//     end while
+//     S[j+1] = temp;
+// end for
+
+
 void insertion_sort(int arr[], int sz)
 {
     int i, j, v;

@@ -1,0 +1,116 @@
+Syed Shams Elahi
+1621176
+
+1) T(n) = n^3 −3n
+n^3 −3n <=c * n3 
+Is true for c=4 and n0 = 21
+Thus n^3 −3n belongs to O(n3).
+
+3) func bubblesort( var a as array )
+    for i from 2 to N
+        swaps = 0
+        for j from 0 to N - 2
+           if a[j] < a[j + 1]
+              swap( a[j], a[j + 1] )
+              swaps = swaps + 1
+        if swaps = 0
+            break
+end func
+
+
+
+4) func mergesort( var a as array )
+     if ( n == 1 ) return a
+
+     var l1 as array = a[0] ... a[n/2]
+     var l2 as array = a[n/2+1] ... a[n]
+
+     l1 = mergesort( l1 )
+     l2 = mergesort( l2 )
+
+     return merge( l1, l2 )
+end func
+
+ func merge( var a as array, var b as array )
+     var c as array
+
+     while ( a and b have elements )
+          if ( a[0] < b[0] )
+               add b[0] to the end of c
+               remove b[0] from b
+          else
+               add a[0] to the end of c
+               remove a[0] from a
+     while ( a has elements )
+          add a[0] to the end of c
+          remove a[0] from a
+     while ( b has elements )
+          add b[0] to the end of c
+          remove b[0] from b
+     return c
+
+
+
+
+5) Quicksort(A as array, low as int, high as int){
+    if (low < high){
+        pivot_location = Partition(A,low,high)
+        Quicksort(A,low, pivot_location)
+        Quicksort(A, pivot_location + 1, high)
+    }
+}
+Partition(A as array, low as int, high as int){
+     pivot = A[low]
+     leftwall = low
+
+     for i = low + 1 to high{
+         if (A[i] > pivot) then{
+             swap(A[i], A[leftwall])
+             leftwall = leftwall + 1
+         }
+     }
+     swap(pivot,A[leftwall])
+
+    return (leftwall)}
+end func
+
+
+
+
+
+6) Heapsort(A as array)
+    BuildHeap(A)
+    for i = n to 1
+        swap(A[1], A[i])
+        n = n - 1
+        Heapify(A, 1)
+
+BuildHeap(A as array)
+    n = elements_in(A)
+    for i = floor(n/2) to 1
+        Heapify(A,i,n)
+
+Heapify(A as array, i as int, n as int)
+    left = 2i
+    right = 2i+1
+
+    if (left >= n) and (A[left] < A[i])
+        min = left
+    else 
+        min = i
+
+    if (right>=n) and (A[right] < A[min])
+        min = right
+
+    if (min != i)
+        swap(A[i], A[min])
+        Heapify(A, min)
+
+
+O(n) (build(1, n) heap)
++ Sum of (1 to n) for O(log i - log 1) (build(1, j) heap)
+= O(n) + Sum of (1 to n) for O(log i) 
+= O(nlogn)
+
+
+

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn">
+  <bpmn:collaboration id="Collaboration_0wlc9xp">
+    <bpmn:participant id="Participant_1er39yc" name="IFI" processRef="Process_1" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_1" isExecutable="false">
+    <bpmn:sequenceFlow id="SequenceFlow_1n44god" sourceRef="StartEvent_1" targetRef="Task_14livqx" />
+    <bpmn:task id="Task_14livqx" name="Disclose information on website">
+      <bpmn:incoming>SequenceFlow_1n44god</bpmn:incoming>
+    </bpmn:task>
+    <bpmn:startEvent id="StartEvent_1" name="Preperation">
+      <bpmn:outgoing>SequenceFlow_1n44god</bpmn:outgoing>
+    </bpmn:startEvent>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_0wlc9xp">
+      <bpmndi:BPMNShape id="Participant_1er39yc_di" bpmnElement="Participant_1er39yc">
+        <dc:Bounds x="125" y="74" width="600" height="250" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="175" y="121" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="164" y="157" width="58" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_14livqx_di" bpmnElement="Task_14livqx">
+        <dc:Bounds x="325" y="99" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1n44god_di" bpmnElement="SequenceFlow_1n44god">
+        <di:waypoint x="211" y="139" />
+        <di:waypoint x="325" y="139" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="268" y="117" width="0" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

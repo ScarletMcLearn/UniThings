@@ -1,0 +1,112 @@
+<InsightMakerModel>
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <Setting Note="" Version="36" TimeLength="20" TimeStart="0" TimeStep="1" TimeUnits="Years" StrictUnits="true" StrictLinks="true" StrictAgentResolution="true" Units="" HiddenUIGroups="Validation,User Interface" SolutionAlgorithm="RK1" BackgroundColor="white" Throttle="1" Macros="" SensitivityPrimitives="" SensitivityRuns="50" SensitivityBounds="50, 80, 95, 100" SensitivityShowRuns="false" article="{&quot;comments&quot;:true, &quot;facebookUID&quot;: &quot;&quot;}" StyleSheet="{}" id="2">
+      <mxCell parent="1" vertex="1" visible="0">
+        <mxGeometry x="20" y="20" width="80" height="40" as="geometry"/>
+      </mxCell>
+    </Setting>
+    <Display name="Default Display" Note="" Type="Time Series" xAxis="Time (%u)" yAxis="%o" ThreeDimensional="false" Primitives="" AutoAddPrimitives="true" ScatterplotOrder="X Primitive, Y Primitive" Image="Display" yAxis2="" Primitives2="" showMarkers="false" showLines="true" showArea="false" legendPosition="None" id="3">
+      <mxCell style="roundImage;image=/builder/images/DisplayFull.png;" parent="1" vertex="1" visible="0">
+        <mxGeometry x="50" y="20" width="64" height="64" as="geometry"/>
+      </mxCell>
+    </Display>
+    <Picture name="Management Information System (MIS)" Note="" Image="https://1.bp.blogspot.com/-C-mjBJfQ8Kw/V-zXSVKVRqI/AAAAAAAAAgs/YtiTGofPllwb5ClG-nH8Hj77U6Nbun39ACLcB/s1600/responsive-website.png" FlipHorizontal="false" FlipVertical="false" LabelPosition="Bottom" id="59">
+      <mxCell style="picture;image=https://1.bp.blogspot.com/-C-mjBJfQ8Kw/V-zXSVKVRqI/AAAAAAAAAgs/YtiTGofPllwb5ClG-nH8Hj77U6Nbun39ACLcB/s1600/responsive-website.png;imageFlipV=0;imageFlipH=0;shape=image;" parent="1" vertex="1">
+        <mxGeometry x="748" y="575" width="120" height="97" as="geometry"/>
+      </mxCell>
+    </Picture>
+    <Picture name="Proponents" Note="" Image="https://tinyclipart.com/resource/businesswoman-clipart/businessman-clipart-1059943-royalty-free-vector-clip-art-illustration-of-a-black-business-man-and-woman.jpg" FlipHorizontal="false" FlipVertical="false" LabelPosition="Bottom" oldId="77" id="77">
+      <mxCell style="picture;image=https://tinyclipart.com/resource/businesswoman-clipart/businessman-clipart-1059943-royalty-free-vector-clip-art-illustration-of-a-black-business-man-and-woman.jpg;imageFlipV=0;imageFlipH=0;shape=image;" parent="1" vertex="1">
+        <mxGeometry x="40" y="685" width="100" height="100" as="geometry"/>
+      </mxCell>
+    </Picture>
+    <Picture name="Officer In-Charge (OIC)" Note="" Image="http://primrosehillschool.org.uk/wp-content/uploads/2014/10/Male-large3.png" FlipHorizontal="false" FlipVertical="false" LabelPosition="Bottom" oldId="78" id="78">
+      <mxCell style="picture;image=http://primrosehillschool.org.uk/wp-content/uploads/2014/10/Male-large3.png;imageFlipV=0;imageFlipH=0;shape=image;" parent="1" vertex="1">
+        <mxGeometry x="360" y="690" width="64" height="80" as="geometry"/>
+      </mxCell>
+    </Picture>
+    <Picture name="Manager" Note="" Image="https://everypixel.com/i/covers/microstock/vector/business/office/cover.jpg" FlipHorizontal="false" FlipVertical="false" LabelPosition="Bottom" oldId="79" id="79">
+      <mxCell style="picture;image=https://everypixel.com/i/covers/microstock/vector/business/office/cover.jpg;imageFlipV=0;imageFlipH=0;shape=image;fontSize=16;" parent="1" vertex="1">
+        <mxGeometry x="868" y="857" width="225" height="150" as="geometry"/>
+      </mxCell>
+    </Picture>
+    <Picture name="Implementing Financial Institution (IFI)" Note="" Image="https://lh3.googleusercontent.com/g10ekYjntNpNDqQjPxe8XLUtXh5vxGx_Sv3agF0vErNFXrariRut6D16Q5BLLHEOEgaNgFU=s121" FlipHorizontal="false" FlipVertical="false" LabelPosition="Bottom" oldId="80" id="80">
+      <mxCell style="picture;image=https://lh3.googleusercontent.com/g10ekYjntNpNDqQjPxe8XLUtXh5vxGx_Sv3agF0vErNFXrariRut6D16Q5BLLHEOEgaNgFU=s121;imageFlipV=0;imageFlipH=0;shape=image;fontSize=16;" parent="1" vertex="1">
+        <mxGeometry x="534" y="460" width="130" height="90" as="geometry"/>
+      </mxCell>
+    </Picture>
+    <Picture name="Stationary, Printer, Paper" Note="" Image="http://www.clker.com/cliparts/e/1/8/f/13509659791599349067printer.svg.hi.png" FlipHorizontal="false" FlipVertical="false" LabelPosition="Bottom" id="81">
+      <mxCell style="picture;image=http://www.clker.com/cliparts/e/1/8/f/13509659791599349067printer.svg.hi.png;imageFlipV=0;imageFlipH=0;shape=image;" parent="1" vertex="1">
+        <mxGeometry x="210" y="530" width="160" height="90" as="geometry"/>
+      </mxCell>
+    </Picture>
+    <Picture name="Proponent&#39;s Factory" Note="" Image="https://media.istockphoto.com/vectors/industrial-factory-in-flat-style-a-vector-an-illustration-vector-id685066994" FlipHorizontal="false" FlipVertical="false" LabelPosition="Bottom" id="86">
+      <mxCell style="picture;image=https://media.istockphoto.com/vectors/industrial-factory-in-flat-style-a-vector-an-illustration-vector-id685066994;imageFlipV=0;imageFlipH=0;shape=image;" parent="1" vertex="1">
+        <mxGeometry x="550" y="932" width="64" height="64" as="geometry"/>
+      </mxCell>
+    </Picture>
+    <Link name="discusses with" Note="" BiDirectional="false" id="87">
+      <mxCell style="link" parent="1" source="78" target="77" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="requests additional documents" Note="" BiDirectional="false" id="88">
+      <mxCell style="link" parent="1" source="80" target="78" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="170" y="710" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="uses" Note="" BiDirectional="false" id="89">
+      <mxCell style="link" parent="1" source="78" target="94" edge="1">
+        <mxGeometry x="-14" y="15" width="100" height="100" as="geometry">
+          <mxPoint x="-14" y="115" as="sourcePoint"/>
+          <mxPoint x="263" y="895" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="inspects" Note="" BiDirectional="false" id="90">
+      <mxCell style="link" parent="1" source="78" target="86" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="goes to" Note="" BiDirectional="false" id="91">
+      <mxCell style="link" parent="1" source="79" target="86" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="440" y="930" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="uses to store or receive information" Note="" BiDirectional="false" id="92">
+      <mxCell style="link" parent="1" source="78" target="59" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="approves / disapproves" Note="" BiDirectional="false" id="93">
+      <mxCell style="link" parent="1" source="79" target="59" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Picture name="Annex" Note="" Image="http://clip4art.com/wp-content/uploads/2016/07/free-paper-clipart-public-domain-paper-clip-art-images-andtop-10-png-clip-art-paper-microsoft-clipart.png" FlipHorizontal="false" FlipVertical="false" LabelPosition="Bottom" oldId="94" id="94">
+      <mxCell style="picture;image=http://clip4art.com/wp-content/uploads/2016/07/free-paper-clipart-public-domain-paper-clip-art-images-andtop-10-png-clip-art-paper-microsoft-clipart.png;imageFlipV=0;imageFlipH=0;shape=image;fontSize=16;" parent="1" vertex="1">
+        <mxGeometry x="190" y="890" width="90" height="74" as="geometry"/>
+      </mxCell>
+    </Picture>
+  </root>
+</InsightMakerModel>

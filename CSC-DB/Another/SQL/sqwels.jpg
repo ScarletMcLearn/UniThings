@@ -1,0 +1,197 @@
+accounts
+
+BEGIN;
+--
+-- Create model Profile
+--
+CREATE TABLE "account_profile" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "date_of_birth" date NULL, "photo" varchar(100) NOT NULL, "user_id" integer NOT NULL UNIQUE REFERENCES "auth_user" ("id") DEFERRABLE INITIALLY DEFERRED);
+COMMIT;
+
+
+
+
+
+
+
+catalog
+BEGIN;
+--
+-- Create model Author
+--
+CREATE TABLE "catalog_author" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "first_name" varchar(100) NOT NULL, "last_name" varchar(100) NOT NULL, "date_of_birth" date NULL, "date_of_death" date NULL);
+--
+-- Create model Book
+--
+CREATE TABLE "catalog_book" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "title" varchar(200) NOT NULL, "summary" text NOT NULL, "isbn" varchar(13) NOT NULL, "author_id" integer NULL REFERENCES "catalog_author" ("id") DEFERRABLE INITIALLY DEFERRED);
+--
+-- Create model BookInstance
+--
+CREATE TABLE "catalog_bookinstance" ("id" char(32) NOT NULL PRIMARY KEY, "imprint" varchar(200) NOT NULL, "due_back" date NULL, "status" varchar(1) NOT NULL, "book_id" integer NULL REFERENCES "catalog_book" ("id") DEFERRABLE INITIALLY DEFERRED);
+--
+-- Create model Genre
+--
+CREATE TABLE "catalog_genre" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(200) NOT NULL);
+--
+-- Add field genre to book
+--
+CREATE TABLE "catalog_book_genre" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "book_id" integer NOT NULL REFERENCES "catalog_book" ("id") DEFERRABLE INITIALLY DEFERRED, "genre_id" integer NOT NULL REFERENCES "catalog_genre" ("id") DEFERRABLE INITIALLY DEFERRED);
+CREATE INDEX "catalog_book_author_id_b0849980" ON "catalog_book" ("author_id");
+CREATE INDEX "catalog_bookinstance_book_id_69f93415" ON "catalog_bookinstance" ("book_id");
+CREATE UNIQUE INDEX catalog_book_genre_book_id_genre_id_d15f6922_uniq ON "catalog_book_genre" ("book_id", "genre_id");
+CREATE INDEX "catalog_book_genre_book_id_e5a77c43" ON "catalog_book_genre" ("book_id");
+CREATE INDEX "catalog_book_genre_genre_id_77d7ffde" ON "catalog_book_genre" ("genre_id");
+COMMIT;
+
+
+
+
+
+BEGIN;
+--
+-- Change Meta options on author
+--
+--
+-- Add field borrower to bookinstance
+--
+ALTER TABLE "catalog_bookinstance" RENAME TO "catalog_bookinstance__old";
+CREATE TABLE "catalog_bookinstance" ("borrower_id" integer NULL REFERENCES "auth_user" ("id") DEFERRABLE INITIALLY DEFERRED, "id" char(32) NOT NULL PRIMARY KEY, "imprint" varchar(200) NOT NULL, "due_back" date NULL, "status" varchar(1) NOT NULL, "book_id" integer NULL REFERENCES "catalog_book" ("id") DEFERRABLE INITIALLY DEFERRED);
+INSERT INTO "catalog_bookinstance" ("book_id", "status", "imprint", "due_back", "id", "borrower_id") SELECT "book_id", "status", "imprint", "due_back", "id", NULL FROM "catalog_bookinstance__old";
+DROP TABLE "catalog_bookinstance__old";
+CREATE INDEX "catalog_bookinstance_borrower_id_0d71c37c" ON "catalog_bookinstance" ("borrower_id");
+CREATE INDEX "catalog_bookinstance_book_id_69f93415" ON "catalog_bookinstance" ("book_id");
+COMMIT;
+
+
+
+
+
+
+
+
+
+
+BEGIN;
+--
+-- Change Meta options on bookinstance
+--
+COMMIT;
+
+
+
+
+
+
+
+
+
+
+
+message board
+
+BEGIN;
+--
+-- Create model Notice
+--
+CREATE TABLE "message_board_notice" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "notice_title" varchar(200) NOT NULL, "notice_text" text NOT NULL, "published_date" date NULL, "event_date" date NULL);
+COMMIT;
+
+
+
+
+
+
+
+
+
+
+
+BEGIN;
+--
+-- Add field event_kind to notice
+--
+ALTER TABLE "message_board_notice" RENAME TO "message_board_notice__old";
+CREATE TABLE "message_board_notice" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "event_kind" varchar(1) NOT NULL, "notice_title" varchar(200) NOT NULL, "notice_text" text NOT NULL, "published_date" date NULL, "event_date" date NULL);
+INSERT INTO "message_board_notice" ("notice_title", "notice_text", "event_kind", "published_date", "id", "event_date") SELECT "notice_title", "notice_text", 'n', "published_date", "id", "event_date" FROM "message_board_notice__old";
+DROP TABLE "message_board_notice__old";
+COMMIT;
+
+
+
+
+
+
+
+
+
+
+
+BEGIN;
+--
+-- Add field posted_by to notice
+--
+ALTER TABLE "message_board_notice" RENAME TO "message_board_notice__old";
+CREATE TABLE "message_board_notice" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "posted_by_id" integer NULL REFERENCES "auth_user" ("id") DEFERRABLE INITIALLY DEFERRED, "notice_title" varchar(200) NOT NULL, "notice_text" text NOT NULL, "published_date" date NULL, "event_date" date NULL, "event_kind" varchar(1) NOT NULL);
+INSERT INTO "message_board_notice" ("published_date", "event_date", "event_kind", "posted_by_id", "notice_text", "notice_title", "id") SELECT "published_date", "event_date", "event_kind", NULL, "notice_text", "notice_title", "id" FROM "message_board_notice__old";
+DROP TABLE "message_board_notice__old";
+CREATE INDEX "message_board_notice_posted_by_id_dbe98196" ON "message_board_notice" ("posted_by_id");
+COMMIT;
+
+
+
+
+
+
+
+
+
+
+BEGIN;
+--
+-- Remove field posted_by from notice
+--
+ALTER TABLE "message_board_notice" RENAME TO "message_board_notice__old";
+CREATE TABLE "message_board_notice" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "notice_title" varchar(200) NOT NULL, "notice_text" text NOT NULL, "published_date" date NULL, "event_date" date NULL, "event_kind" varchar(1) NOT NULL);
+INSERT INTO "message_board_notice" ("notice_text", "notice_title", "event_date", "event_kind", "id", "published_date") SELECT "notice_text", "notice_title", "event_date", "event_kind", "id", "published_date" FROM "message_board_notice__old";
+DROP TABLE "message_board_notice__old";
+COMMIT;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+BEGIN;
+--
+-- Add field posted_by to notice
+--
+ALTER TABLE "message_board_notice" RENAME TO "message_board_notice__old";
+CREATE TABLE "message_board_notice" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "posted_by_id" integer NULL REFERENCES "auth_group" ("id") DEFERRABLE INITIALLY DEFERRED, "notice_title" varchar(200) NOT NULL, "notice_text" text NOT NULL, "published_date" date NULL, "event_date" date NULL, "event_kind" varchar(1) NOT NULL);
+INSERT INTO "message_board_notice" ("id", "event_date", "notice_title", "notice_text", "event_kind", "posted_by_id", "published_date") SELECT "id", "event_date", "notice_title", "notice_text", "event_kind", NULL, "published_date" FROM "message_board_notice__old";
+DROP TABLE "message_board_notice__old";
+CREATE INDEX "message_board_notice_posted_by_id_dbe98196" ON "message_board_notice" ("posted_by_id");
+COMMIT;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

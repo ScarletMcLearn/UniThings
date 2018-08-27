@@ -1,0 +1,24 @@
+student, faculty, registrars office staff, library staff - sign up
+
+student, faculty, registrars office staff, library staff - log in
+
+student - log out
+office staff   - log out
+faculty - log out
+registrars  - log out
+
+faculty  - post notice
+registrars office staff - post notice
+library staff  - post notice
+
+User - receive notification for notice
+
+User - receive notification for book withdrawn
+
+
+User - search book from lib db
+
+User - log out
+
+
+

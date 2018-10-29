@@ -66,6 +66,15 @@ var $bill = $('#bill');
 var $rating = $('#rating');
 var $form = $('#frm')
 
+var nm = NaN;
+var eml = NaN;
+var cmnt = NaN;
+var prc = NaN;
+var bll = NaN;
+var rtn = NaN;
+var frm = NaN;
+
+
 $form.on('submit', function(e)
 {
     // e.preventDefault();
@@ -79,6 +88,15 @@ $form.on('submit', function(e)
     var rating_val = $rating.val();
     var form_val = $form.val();
 
+    nm = $name.val();
+    eml = $email.val();
+    cmnt = $comment.val();
+    prc = $price.val();
+    bll = $bill.val();
+    rtn = $rating.val();
+    frm = $form.val();
+
+
     console.log(name_val);
     console.log(email_val);
     console.log(comment_val);
@@ -89,6 +107,13 @@ $form.on('submit', function(e)
    
 
     localStorage.setItem('name_val', name_val);
+    localStorage.setItem('email_val', email_val);
+    localStorage.setItem('comment_val', comment_val);
+    localStorage.setItem('price_val', price_val);
+    localStorage.setItem('bill_val', bill_val);
+    localStorage.setItem('rating_val', rating_val);
+    localStorage.setItem('form_val', form_val);
+
 
     window.location.replace("tip.html");
 })

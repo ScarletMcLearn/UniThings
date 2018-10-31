@@ -10,12 +10,12 @@ console.log(form);
 // })
 
 
-if (! $.cookie("cookieName")){
-    // do your stuff
+// if (! $.cookie("cookieName")){
+//     // do your stuff
  
-    // set cookie now
-    $.cookie("cookieName", "firstSet", {"expires" : 7})
- }
+//     // set cookie now
+//     $.cookie("cookieName", "firstSet", {"expires" : 7})
+//  }
 
 
 //  (function() {
@@ -119,4 +119,51 @@ $form.on('submit', function(e)
 })
 
 
+
+function send() {
+    console.log('Testing!');
+
+
+    var name_val = $name.val();
+    var email_val = $email.val();
+    var comment_val = $comment.val();
+    var price_val = $price.val();
+    var bill_val = $bill.val();
+    var rating_val = $rating.val();
+    var form_val = $form.val();
+
+    nm = $name.val();
+    eml = $email.val();
+    cmnt = $comment.val();
+    prc = $price.val();
+    bll = $bill.val();
+    rtn = $rating.val();
+    frm = $form.val();
+
+
+    console.log(name_val);
+    console.log(email_val);
+    console.log(comment_val);
+    console.log(price_val);
+    console.log(bill_val);
+    console.log(rating_val);
+    console.log(form_val);
+
+
+    localStorage.setItem('name_val', name_val);
+    // localStorage.setItem('email_val', email_val);
+    // localStorage.setItem('comment_val', comment_val);
+    // localStorage.setItem('price_val', price_val);
+    // localStorage.setItem('bill_val', bill_val);
+    // localStorage.setItem('rating_val', rating_val);
+    // localStorage.setItem('form_val', form_val);
+
+
+    console.log('Before');
+    var bs =  getItem('name_val');
+    console.log(bs);
+    console.log('After');
+
+
+  }
 

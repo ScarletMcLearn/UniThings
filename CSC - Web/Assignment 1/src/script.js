@@ -149,21 +149,46 @@ function send() {
     console.log(rating_val);
     console.log(form_val);
 
+    if(rating_val == '*****')
+    {
+        localStorage.setItem('rating_val', 5);
+    }
+    else if(rating_val == '****')
+    {
+        localStorage.setItem('rating_val', 4);
+    }
+    else if(rating_val == '***')
+    {
+        localStorage.setItem('rating_val', 3);
+    }
+    else if(rating_val == '**')
+    {
+        localStorage.setItem('rating_val', 2);
+    }
+    else if(rating_val == '*')
+    {
+        localStorage.setItem('rating_val', 1);
+    }
+
+
 
     localStorage.setItem('name_val', name_val);
-    // localStorage.setItem('email_val', email_val);
-    // localStorage.setItem('comment_val', comment_val);
-    // localStorage.setItem('price_val', price_val);
-    // localStorage.setItem('bill_val', bill_val);
+    localStorage.setItem('email_val', email_val);
+    localStorage.setItem('comment_val', comment_val);
+    localStorage.setItem('price_val', price_val);
+    localStorage.setItem('bill_val', bill_val);
     // localStorage.setItem('rating_val', rating_val);
-    // localStorage.setItem('form_val', form_val);
+    localStorage.setItem('form_val', form_val);
 
 
     console.log('Before');
-    var bs =  getItem('name_val');
+    var bs =  localStorage.getItem('name_val');
     console.log(bs);
     console.log('After');
 
-
+    window.location.assign("tip.html");
   }
 
+var f_tip =  localStorage.getItem('price_val') * localStorage.getItem('rating_val') / 100;
+
+$('#tipi').append(f_tip);

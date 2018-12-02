@@ -1,0 +1,15 @@
+< THE SYMBOL TABLE >  new lines.exe  --  emu8086 assembler version: 4.08 
+===================================================================================================
+Name                     	Offset    	Size      	Type      	Segment   
+===================================================================================================
+STACK                    	00000     	-5        	SEGMENT   	(ITSELF)  
+DATA                     	00010     	-5        	SEGMENT   	(ITSELF)  
+STRING1                  	00000     	1         	VAR       	data      
+STRING2                  	0000D     	1         	VAR       	data      
+STRING3                  	0001D     	1         	VAR       	data      
+CODE                     	00013     	-5        	SEGMENT   	(ITSELF)  
+MAIN                     	00000     	-1        	NEAR      	code      
+===================================================================================================
+[ 12-Oct-18  --  5:12:31 PM ] 
+< END >
+ 

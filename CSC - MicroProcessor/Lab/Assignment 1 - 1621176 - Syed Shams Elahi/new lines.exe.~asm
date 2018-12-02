@@ -1,0 +1,49 @@
+.MODEL SMALL
+
+.STACK
+
+.DATA
+
+STRING1 DB ‘HELLO WORLD $’                            ; declaring string
+
+STRING2 DB 10, 13, ‘GOOD MORNING $’            ; declaring string
+
+STRING3 DB 10, 13, ‘HAVE GOOD DAY $’            ; declaring string
+
+.CODE
+
+MAIN PROC                                                                   ; main procedure
+
+MOV AX, @DATA                                                         ; initialize the data segment
+
+MOV DS, AX
+
+LEA DX, STRING1                                                        ; loading the effective address
+
+MOV AH, 09H                                                               ; for string display
+
+INT 21H                                                                          ; dos interrupt function
+
+LEA DX, STRING2                                                       ; loading the effective address
+
+MOV AH, 09H                                                               ; for string display
+
+INT 21H                                                                           ; dos interrupt function
+
+LEA DX, STRING3                                                        ; loading the effective address
+
+MOV AH, 09H                                                                ; for string display
+
+INT 21H                                                                           ; dos interrupt function
+
+MOV AX, 4C00H                                                           ; end request
+
+INT 21H
+
+MAIN ENDP                                                                   ; end procedure
+
+END MAIN                                                                      ; end program
+
+
+
+; [SOURCE]: F:\Study\CSC - MP\Lab\new lines.asm

@@ -1,0 +1,157 @@
+- Multiple processors can execute in parallel to increase speed
+  Multiple processor organization - 
+  	- Symmetric MP (SMP):
+		Multiple similar processors connected by bus
+		Problem : cache coherence [If given line of data present in more than one cache, it is possible to have invalid version of that line. Soln: Cache coherence protocols] 
+	- NonUniform Memory Access (NUMA)
+
+- Chip Multiprocessing:
+	More than one processor on single chip 
+	Multithread processor:
+		More than one thread on single processor
+- Cluster:
+		Interconnected PCs working together as a unified PC resource creating an illusion 		of one machine
+	- NUMA: 
+		Shared-memory Multiprocessor where access time for a given processor to word in 		memory depends on location of memory word
+
+- Vector facility: 
+	Special-purpose type of parallel organization
+
+
+
+
+
+
+
+
+
+
+Multiple Processor Organizations:
+Types of Parallel Processor Systems:
+	- Single Instruction Single Data (SISD) stream:
+		Single processor executes single instruction stream to operate on data stored in 		memory (ex - uniprocessors)
+	- Single Instruction Multiple Data (SIMD) stream:
+		Single machine instruction controls the simultaneous execution of number of 		processing elements on lockstep basis.
+		Each element has data memory, and each instruction is on different set of data by 		different processors. (ex - Vector and array proessors)
+	- Multiple Instruction Single Data (MISD) stream:
+		Sequence of data is transmitted to set of processors each of which executes a 		different instruction sequence.
+		MISD not commercially implemented.
+	- Multiple Instruction Multiple Data (MIMD) stream:
+		A set of processors simultaneously execute different instruction sequences on 		different data sets (ex - SMPs clusters, NUMA systems)
+
+
+In MIMD organization, processors are GP: each is able to process all instructions necessary to perform appropriate data transformation.
+MIMDs can be subdivided by means in which processors communicate.
+If processors share common memory, a shared memory.
+With MIMD, there are multiple control units, each feeding a seperate instruction stream to its own PU.
+The MIMD maybe shared-memory multiprocessor or distributed-memory multipcomputer.
+
+Design issues relating to SMPs, clusters, and NUMAs are complex. 
+Involves isses relating to physical organization, and interconnection structures, interprocessor communiation, opperating system design, and applciation software techniques.
+
+
+
+Advantages of SMP organization over uniprocessor organization:
+	- Performace: Work done by PC will yeild greater performance with multiple processors system, if it can be organized so that some portions of the work can be done in parallel.
+	- Diag
+	- Availability: Symmetric multiprocessor all processors can perform same functions.
+	Failure of a single processor does not halt the machine.
+	Instead System can continue to function at reduced performance.
+	- Incremental growth: User can enhance the system performance by adding additional 	processor.
+	- Scaling: Vendors can offer a range of products with different price and performance characterisitics based on number of processors configured in system.
+
+
+
+
+
+
+
+Generic Block Diagram of Multiprocessor System
+
+
+
+Features to facilitate DMA transfers from I/O procesors:
+	- Addressing: Must be possible to distinguish modules on the bus to determine the source 	and destination of data.
+	- Arbitration: Any I/O module can temporarilty function as master. 
+	A mechanism is provided to arbitrate competing requests for bus control using some sort of 	priority scheme.
+
+Symmetric Multiprocessor Organization
+	
+	- Time sharing: When 1 module is controlling the bus, other modules are locked out and if 	necessary suspend operation until bus acccess is achieved.
+
+
+Features of Bus organization:
+	- Simplicity: It is the simplest approach to multiprocessor organization.
+	The physical interface and addressing, atbitration, and time-sharing logic of each 	processor remain same as in single processor system.
+	- Flexibility: It is easy to expand the system by attaching more processors to the bus.
+	- Reliability: The Bus is a passive medium, and failure of any attached device does not 	cause failure to the whole system.
+
+
+
+
+
+Multiprocessor Operating System Design Considerations:
+	- Simultaneous concurrent processes: OS routines need to allow several process to execute 	same IS code simultaneously. 
+	With multiple processors executing same or different parts of the OS, OS tables and 	management structures mush be managed properly to avoid deadlock or invalid operations.
+
+	- Scheduling: Any processor may perform scheduling, so conflicts must be avoided. 
+	Scheduler must assign ready processes to avialble processors.
+
+	- Synchronization: With multiple active processes having potential access to shared 	address spaces or shared I/O resources, care must be taken to provide effective 	synchronization. 
+	Synchronization is a facility that enforces mutual exclusion and event ordering.
+
+	- Memory management: Memory management on a multiprocessor must deal with all of the 	issues found on uniprocessor machines.
+	The OS needs to exploit the available hardware parallelism, such as multiported memories 	to achieve the best performance.
+	The paging mechanisms on different processors must be coordinated to enforce consistency 	when several processors share a page or segment and to  decide on page replacement.
+
+	- Reliability and fault tolerance: The OS should provide grateful degradation in the face 	of processor failure. The scheduler and other portions of the OS must recognize the loss 	of a processor and restructure management tables accordingly.
+
+
+
+
+
+
+
+Benefits of clustering:
+	- Absolute scalability: 
+	It is possible to create large clusters which surpass the power of the largest standalone 	machines. A cluster can have dozens of machines, each of which is a multiprocessor.
+
+	- Incremental scalability: 
+	A cluster is configured in such a way that it is possible to add new systems to the 	cluster in small increments. So a user can start out with a modest system and expand it as 	needs grow, without having to go through a major upgrade in which an existing small system 	is replaced with a larger system.
+
+	- High availability:
+	Because each node in a cluster is a standalone PC, the failure of one node does not mean 	loss of service. In many products, fault tolerance is handled automatically in software.
+
+	- Superior price/performance: 
+	By using commodity building blocks, it is possible to put together a cluster with equal or 	greater computing power than a single large machine, at much lower cost.
+
+
+- Cluster Configurations Diagram
+
+
+- Clustering benifits and limitations diagram
+
+
+
+- Passive standby: Is simply to have one computer handle all of the processing load while the other PC remains inactive, standing by to take over in the event of a failure of the primary.
+
+- Shared nothing: To reduce communications overhead, most clusters now consist of servers connected to common disks. In variation on this aproach, called shared nothing, the common disks are partitioned into volumes and each volume is owned by a single PC. If that PC fails, the cluster must be reconfigured so that some other PC has ownership of the volumes of the failed PC.
+
+- Shared disk: It is also possible to have multiple PCs share the same disks at the same time (shared disk approacch) so that each PC has access to all of the volumes on all of the disks. The approach requires the use of some types of locking facility to ensure the data can only be accessed by one PC at a time.
+
+
+
+
+
+- The CPU may be placed in idle state by disabling buses through special control signals. 
+The bus request (BR) input is used by the DMA controller to request CPU to relinquish control of buses. When this places the address bus, the data bus, and the read and write lines into the
+
+
+
+
+
+- CPU initialized DMA by sending the following information through the data bus:
+	1) The starting address of the memory block where data are available or where data are to 	be stored.
+	2) The word count, which is the number of words in the memory block
+	3) Control to specify the mode of transfer such as R/W.
+	4) A control to start DMA transfer.
